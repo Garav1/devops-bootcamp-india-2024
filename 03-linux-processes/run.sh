@@ -5,7 +5,7 @@ IMAGE_NAME="linux-processes-intro"
 CONTAINER_NAME="linux-processes-intro"
 
 function build(){
-    docker build -t $IMAGE_NAME .
+    docker build -t $IMAGE_NAME . --no-cache
 }
 
 function run(){

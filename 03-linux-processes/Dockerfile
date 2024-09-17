@@ -1,9 +1,7 @@
 FROM ubuntu:20.04
 
-# RUN apt-get update && apt-get install -y procps
-
 RUN apt-get update && \
-    apt-get install -y psmisc procps && \
+    apt-get install -y psmisc procps iputils-ping dnsutils && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
