@@ -34,7 +34,10 @@ case $COMMAND in
     "exec")
         exec
         ;;
-
+    "run-exec")
+        run
+        exec
+        ;;
     "stop")
         stop
         ;;

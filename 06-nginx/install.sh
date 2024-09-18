@@ -6,7 +6,7 @@ echo "Installing Nginx dependencies..."
 echo "--------------------------------"
 
 sudo apt update
-sudo apt install curl gnupg2 ca-certificates lsb-release ubuntu-keyring
+sudo apt install -y curl gnupg2 ca-certificates lsb-release ubuntu-keyring
 
 curl https://nginx.org/keys/nginx_signing.key | gpg --dearmor \
     | sudo tee /usr/share/keyrings/nginx-archive-keyring.gpg >/dev/null
@@ -24,3 +24,9 @@ echo "--------------------------------"
 
 sudo apt update
 sudo apt install nginx
+
+echo ""
+echo "Create Nginx user 'nginx' and check whether it exists..."
+echo "--------------------------------"
+sudo useradd -r -s /bin/false nginx
+sudo getent passwd nginx
